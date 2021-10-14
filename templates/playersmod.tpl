@@ -2,10 +2,11 @@
 <ul class="list-group">
 {foreach from=$players item=player}
     <li class="list-group-item">
-        {$player->nombre} <a href="viewPlayer/{$player->id}" class="btn btn-info">Ver</a>
-            <a class="btn btn-danger" href="deletePlayer/{$player->id}'">Borrar</a>
-{/foreach}  
+        {$player->nombre} | {$sports[$player->id_deporte -1]->deporte}
+        <a href="viewPlayer/{$player->id}" class="btn btn-info">Ver</a>
+        <a class="btn btn-danger" href="deletePlayer/{$player->id}'">Borrar</a>
     </li>
+{/foreach}  
 </ul>
 
 

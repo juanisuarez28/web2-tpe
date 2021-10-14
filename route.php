@@ -20,6 +20,9 @@ $sportController = new SportsController();
 $indexController = new IndexController();
 $loginController= new LoginController();
 switch($params[0]){
+    case'checkIn':
+        $loginController->checkIn();
+        break;
     case 'login':
         $loginController->showLogin();
         break;
@@ -28,9 +31,6 @@ switch($params[0]){
         break;
     case'showCheckIn':
         $loginController->ShowCheckIn();
-        break;
-    case'checkIn':
-        $loginController->checkIn();
         break;
     case 'verify':
         $loginController->verifyLogin();
@@ -47,14 +47,14 @@ switch($params[0]){
     case 'updatePlayer':
         $playersController->updatePlayer();
         break;
+        case 'viewPlayersOfSport':
+            $playersController->viewPlayersOfSport($params[1]);
+            break;
+        case 'viewPlayer':
+            $playersController->viewPlayer($params[1]);
+            break;
     case 'updateSport':
         $sportController->updateSport($params[1]);
-        break;
-    case 'viewPlayersOfSport':
-        $playersController->viewPlayersOfSport($params[1]);
-        break;
-    case 'viewPlayer':
-        $playersController->viewPlayer($params[1]);
         break;
     case'createSport':
         $sportController->createSport();

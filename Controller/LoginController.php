@@ -47,7 +47,7 @@ class LoginController{
                 $_SESSION['username']=$user;
                 $rol = $user->rol;
                 $_SESSION['rol']=$rol;
-                // se debe pasar el header para que redirija a /home, sino queda en verify, no se como pasar el rol
+                // se debe pasar el header para que redirija a /home, sino queda en verify
                 header("Location: ".BASE_URL."home");
             }
             else{
