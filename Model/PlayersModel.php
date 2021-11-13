@@ -30,6 +30,10 @@ class PlayersModel{
         $sentencia = $this->db->prepare("UPDATE jugadores SET nombre='$nombre',dni='$dni', telefono='$telefono', cuota_mensual='$cuota', id_deporte= '$sport' WHERE nombre='$anteriornombre'");
         $sentencia->execute();
     }
+    function updatePlayerWithApi($playerId, $nombre, $id_deporte, $dni, $telefono, $cuota_mensual){
+        $sentencia = $this->db->prepare("UPDATE jugadores SET nombre='$nombre',dni='$dni', telefono='$telefono', cuota_mensual='$cuota_mensual', id_deporte= '$id_deporte' WHERE id='$playerId'");
+        $sentencia->execute();
+    }
     function getPlayersOfSport($id){
         $sentencia= $this->db->prepare("SELECT * from jugadores WHERE id_deporte=?");
         $sentencia->execute(array($id));

@@ -47,14 +47,11 @@ switch($params[0]){
     case 'updatePlayer':
         $playersController->updatePlayer();
         break;
-        case 'viewPlayersOfSport':
-            $playersController->viewPlayersOfSport($params[1]);
-            break;
-        case 'viewPlayer':
-            $playersController->viewPlayer($params[1]);
-            break;
-    case 'updateSport':
-        $sportController->updateSport($params[1]);
+    case 'viewPlayersOfSport':
+        $playersController->viewPlayersOfSport($params[1]);
+        break;
+    case 'viewPlayer':
+        $playersController->viewPlayer($params[1]);
         break;
     case'createSport':
         $sportController->createSport();
@@ -65,6 +62,9 @@ switch($params[0]){
      case'deleteSport':
         $sportController->deleteSport($params[1]);
         break;   
+     case 'updateSport':
+        $sportController->updateSport($params[1]);
+        break;
     default:
         echo('404 Page not found');
         break;

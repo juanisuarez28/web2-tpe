@@ -9,7 +9,10 @@ class IndexView{
     function showHomeRedirect(){
         header("Location: ".BASE_URL."home");
     }
-    function showIndexUser($players, $sports){
+    function showHome(){
+        $this->smarty->display('templates/home.tpl');
+    }
+    /*function showIndexUser($players, $sports){
         $this->smarty->assign('players', $players);
         $this->smarty->assign('sports', $sports);
         $this->smarty->display('templates/indexUser.tpl');
@@ -19,6 +22,7 @@ class IndexView{
         $this->smarty->assign('sports', $sports);
         $this->smarty->display('templates/indexMod.tpl');
     }
+    */
     function showLoginRedirect(){
         header("Location: ".BASE_URL."login");
     }
