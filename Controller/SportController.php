@@ -17,6 +17,17 @@ class SportsController{
         $this->model->insertSport($_POST['sport'], $_POST['category'], $_POST['gender']);
         $this->view->showHomeRedirect();
     }
+    function viewSports(){
+        $this->helper->checkLoggedIn();
+        $rol=$this->helper->checkRol();
+        $sports = $this->model->getSports();
+        if($rol=="standard"){
+            $this->view->showSportsStandard($sports);
+
+        }else{
+            $this->view->showSportsMod($sports);
+        }
+    }
     function viewSport($id){
         $this->helper->checkLoggedIn();
         $sport = $this->model->getSport($id);

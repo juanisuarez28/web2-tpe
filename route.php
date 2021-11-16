@@ -26,6 +26,12 @@ switch($params[0]){
     case 'login':
         $loginController->showLogin();
         break;
+    case'viewPlayers':
+        $playersController->viewPlayers();
+        break;
+    case'viewSports':
+        $sportController->viewSports();
+        break;
     case 'logout':
         $loginController->logout();
         break;

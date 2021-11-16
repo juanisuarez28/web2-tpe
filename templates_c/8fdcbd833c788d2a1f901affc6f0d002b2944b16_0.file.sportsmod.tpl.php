@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-16 20:52:54
-  from 'C:\xampp\htdocs\web2\TPE\templates\sportsStandard.tpl' */
+/* Smarty version 3.1.39, created on 2021-11-16 20:52:34
+  from 'C:\xampp\htdocs\web2\TPE\templates\sportsmod.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61940c163c5230_28250342',
+  'unifunc' => 'content_61940c0210e248_72774251',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '75890bd850e58cebf636ea78cc5f2388631e7cdf' => 
+    '8fdcbd833c788d2a1f901affc6f0d002b2944b16' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\sportsStandard.tpl',
-      1 => 1637092351,
+      0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\sportsmod.tpl',
+      1 => 1637092346,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/nav.tpl' => 1,
   ),
 ),false)) {
-function content_61940c163c5230_28250342 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61940c0210e248_72774251 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:templates/nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -37,12 +37,13 @@ $_smarty_tpl->tpl_vars['sport']->do_else = false;
 ?>
         <li class="list-group-item">
             ID <?php echo $_smarty_tpl->tpl_vars['sport']->value->id_deporte;?>
--<?php echo $_smarty_tpl->tpl_vars['sport']->value->deporte;?>
+: <?php echo $_smarty_tpl->tpl_vars['sport']->value->deporte;?>
  | <?php echo $_smarty_tpl->tpl_vars['sport']->value->categoria;?>
  | <?php echo $_smarty_tpl->tpl_vars['sport']->value->genero;?>
- 
-            <a href="viewSport/<?php echo $_smarty_tpl->tpl_vars['sport']->value->id_deporte;?>
+ <a href="viewSport/<?php echo $_smarty_tpl->tpl_vars['sport']->value->id_deporte;?>
 " class="btn btn-info">Ver</a>
+            <a class="btn btn-danger" href="deleteSport/<?php echo $_smarty_tpl->tpl_vars['sport']->value->id_deporte;?>
+">Borrar</a>
             <a class="btn btn-success" href="viewPlayersOfSport/<?php echo $_smarty_tpl->tpl_vars['sport']->value->id_deporte;?>
 ">Jugadores de <?php echo $_smarty_tpl->tpl_vars['sport']->value->deporte;?>
  en <?php echo $_smarty_tpl->tpl_vars['sport']->value->categoria;?>

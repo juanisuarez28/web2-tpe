@@ -1,4 +1,3 @@
-
 <h2>Crear deporte:</h2>
 <form action="createSport" method="post">
     <input type="text" name="sport" id="sport" placeholder="nombre del deporte">

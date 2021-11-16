@@ -10,9 +10,13 @@ class SportView{
         header("Location: ".BASE_URL."home");
     }
 
-    function showSports($sports){
+    function showSportsStandard($sports){
         $this->smarty->assign('sports', $sports);
-        $this->smarty->display('templates/index.tpl');
+        $this->smarty->display('templates/sportsStandard.tpl');
+    }
+    function showSportsMod($sports){
+        $this->smarty->assign('sports', $sports);
+        $this->smarty->display('templates/sportsmod.tpl');
     }
 
     function showSport($sport){

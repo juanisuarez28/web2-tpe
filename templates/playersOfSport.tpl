@@ -1,5 +1,6 @@
 {include file="templates/header.tpl"}
-<a href="{BASE_URL}home"> Volver </a>
+{include file="templates/nav.tpl"}
+<a href="{BASE_URL}viewSports"> Volver </a>
 <ul class="list-group">
  {foreach from=$players item=player}
         <li class="list-group-item">

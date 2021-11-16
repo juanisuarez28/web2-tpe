@@ -1,5 +1,6 @@
 {include file="templates/header.tpl"}
-<a href="{BASE_URL}home"> Volver </a>
+{include file="templates/nav.tpl"}
+<a href="{BASE_URL}viewPlayers"> Volver </a>
     <ul class="list-group">
         <li class="list-group-item">Nombre del Jugador: {$player->nombre}</li>
         <li class="list-group-item">DNI: {$player->dni}</li>

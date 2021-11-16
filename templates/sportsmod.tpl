@@ -1,3 +1,6 @@
+{include file="templates/header.tpl"}
+{include file="templates/nav.tpl"}
+<a href="logout" class="btn btn-warning" > Cerrar sesión</a>
 <h2>Deportes del Club 2021</h2>
 <ul class="list-group">
     {foreach from=$sports item=sport}
