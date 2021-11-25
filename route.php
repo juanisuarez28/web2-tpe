@@ -3,6 +3,7 @@ require_once "Controller/PlayersController.php";
 require_once "Controller/SportController.php";
 require_once "Controller/IndexController.php";
 require_once "Controller/LoginController.php";
+require_once "Controller/UsersController.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -14,7 +15,7 @@ if(!empty($_GET['action'])){
 }
 
 $params= explode('/', $action);
-
+$userscontroller = new UsersController();
 $playersController = new PlayersController();
 $sportController = new SportsController();
 $indexController = new IndexController();
@@ -71,6 +72,15 @@ switch($params[0]){
      case 'updateSport':
         $sportController->updateSport($params[1]);
         break;
+    case 'users':
+        $userscontroller->getUsers();
+        break;
+    case 'deleteUser':
+        $userscontroller->deleteUser($params[1]);
+        break;
+    case 'updateRol':
+            $userscontroller->updateRol($params[1], $params[2]);
+            break;
     default:
         echo('404 Page not found');
         break;

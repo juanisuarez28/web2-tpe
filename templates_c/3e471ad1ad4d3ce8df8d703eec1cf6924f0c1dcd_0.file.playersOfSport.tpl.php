@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-16 20:54:17
+/* Smarty version 3.1.39, created on 2021-11-25 01:30:53
   from 'C:\xampp\htdocs\web2\TPE\templates\playersOfSport.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61940c69b26078_23917052',
+  'unifunc' => 'content_619ed93d1bf871_26232129',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3e471ad1ad4d3ce8df8d703eec1cf6924f0c1dcd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\playersOfSport.tpl',
-      1 => 1637092448,
+      1 => 1637800092,
       2 => 'file',
     ),
   ),
@@ -23,11 +23,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_61940c69b26078_23917052 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ed93d1bf871_26232129 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:templates/nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<a href="<?php echo BASE_URL;?>
+<a class="btn btn-primary" href="<?php echo BASE_URL;?>
 viewSports"> Volver </a>
 <ul class="list-group">
  <?php

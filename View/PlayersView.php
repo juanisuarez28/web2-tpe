@@ -7,10 +7,10 @@ class PlayersView{
     function __construct(){
         $this->smarty=new Smarty();
     }
-    function showHomeRedirect(){
-        header("Location: ".BASE_URL."home");
+    function showPlayersRedirect(){
+        header("Location: ".BASE_URL."viewPlayers");
     }
-    function showPlayersStandard($players, $sports){
+    function showPlayers($players, $sports){
         $this->smarty->assign('players', $players);
         $this->smarty->assign('sports', $sports);
         $this->smarty->display('templates/playersStandard.tpl');
@@ -23,6 +23,10 @@ class PlayersView{
     function showPlayer($player){
         $this->smarty->assign('player', $player);
         $this->smarty->display('templates/playerDetail.tpl');
+    }
+    function showPlayerNotLogged($player){
+        $this->smarty->assign('player', $player);
+        $this->smarty->display('templates/playerDetailNotLogged.tpl');
     }
     function showPlayersOfSport($players){
         $this->smarty->assign('players', $players);

@@ -28,8 +28,8 @@ class SportModel{
         $sentencia->execute(array($id));
     }
     function updateSport($id, $deporte, $categoria, $genero){
-        $sentencia = $this->db->prepare("UPDATE deportes SET deporte='$deporte', categoria='$categoria', genero='$genero' WHERE id_deporte='$id'");  
-        $sentencia->execute();
+        $sentencia = $this->db->prepare("UPDATE deportes SET deporte=?, categoria=?, genero=? WHERE id_deporte=?");  
+        $sentencia->execute(array($deporte, $categoria, $genero, $id));
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
 require_once 'View/LoginView.php';
-require_once 'Model/UserModel.php';
+require_once 'Model/UsersModel.php';
 require_once 'Helpers/AuthHelper.php';
 
 class LoginController{
@@ -10,12 +10,11 @@ class LoginController{
 
     function __construct(){
         $this->loginView= new LoginView();
-        $this->model= new UserModel();
+        $this->model= new UsersModel();
         $this->helper=new AuthHelper();    
     }
 
     function showLogin(){
-        $this->helper->checkLogout();
         $this->loginView->showLogin(); 
     }
 
@@ -26,14 +25,13 @@ class LoginController{
     function logout(){
         session_start();
         session_destroy();
-        //tendria que llevara header login
-        header("Location: ".BASE_URL."login");
+        header("Location: ".BASE_URL."home");
     }
 
     function checkIn(){
         $user_password=password_hash($_POST['password'], PASSWORD_BCRYPT);
         $this->model->registerUser($_POST['username'],$user_password);
-        $this->loginView->showLogin();
+        $this->verifyLogin();
     }
     
     function verifyLogin(){

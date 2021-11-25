@@ -16,21 +16,24 @@ class PlayersController{
         $this->helper=new AuthHelper();
         $this->sportModel=new SportModel();      
     }
+
     function createPlayer(){
-        $this->helper->checkLoggedIn();
         if(!isset($_GET['cuota'])){
             $cuota=0;
         }else{               
             $cuota=1;
         }
-        $this->model->insertPlayer($_POST['name'], $_POST['sport'], $_POST['dni'],$_POST['phone_number'], $cuota);
-        $this->view->showHomeRedirect();
+        if($_FILES['image']['type'] == "image/jpg" || $_FILES['images']['type'] == "image/jpeg" || $_FILES['images']['type'] == "image/png" ) {
+                    $this->model->insertPlayer($_POST['name'], $_POST['sport'], $_POST['dni'],$_POST['phone_number'], $cuota, $_FILES['images']);
+                    $this->view->showPlayersRedirect();
+        }
     }
+
     function deletePlayer($id){
-        $this->helper->checkLoggedIn();
         $this->model->deletePlayer($id);
-        $this->view->showHomeRedirect();
+        $this->view->showPlayersRedirect();
     }
+
     function updatePlayer(){
         if(!isset($_POST['cuota'])){
             $cuota=0;
@@ -38,26 +41,32 @@ class PlayersController{
             $cuota=1;
         }
         $this->model->updatePlayer($_POST['anteriorNombre'], $_POST['nombre'], $_POST['dni'], $_POST['telefono'], $cuota, $_POST['sport']);
-        $this->view->showHomeRedirect();
+        $this->view->showPlayersRedirect();
     }
+
     function viewPlayers(){
-        $this->helper->checkLoggedIn();
         $rol=$this->helper->checkRol();
         $players=$this->model->getPlayers();
         $sports=$this->sportModel->getSports();
-        if($rol=="standard"){
-            $this->view->showPlayersStandard($players, $sports);
-        }else{
+        if($rol=="mod"){
             $this->view->showPlayersMod($players, $sports);
+         
+        }else{
+            $this->view->showPlayers($players, $sports);
         }
     } 
+
     function viewPlayer($id){
-        $this->helper->checkLoggedIn();
+        $rol=$this->helper->checkRol();
         $player=$this->model->getPlayer($id);
-        $this->view->showPlayer($player);
+        if($rol=="notLogged"){
+            $this->view->showPlayerNotLogged($player);
+        }else if($rol=="mod"||$rol=="standard"){
+            $this->view->showPlayer($player);
+        }
     }  
+
     function viewPlayersOfSport($id){
-        $this->helper->checkLoggedIn();
         $players=$this->model->getPlayersOfSport($id);
         $this->view->showPlayersOfSport($players);
     }

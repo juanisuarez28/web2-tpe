@@ -12,17 +12,7 @@ class IndexView{
     function showHome(){
         $this->smarty->display('templates/home.tpl');
     }
-    /*function showIndexUser($players, $sports){
-        $this->smarty->assign('players', $players);
-        $this->smarty->assign('sports', $sports);
-        $this->smarty->display('templates/indexUser.tpl');
-    }
-    function showIndexMod($players, $sports){
-        $this->smarty->assign('players', $players);
-        $this->smarty->assign('sports', $sports);
-        $this->smarty->display('templates/indexMod.tpl');
-    }
-    */
+
     function showLoginRedirect(){
         header("Location: ".BASE_URL."login");
     }
